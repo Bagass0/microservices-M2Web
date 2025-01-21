@@ -72,31 +72,25 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./MonProjet/projet-devops
-          file: ./MonProjet/DEVOPS-API/.dockerfile
+          file: ./MonProjet/projet-devops/.dockerfile
           push: true
           tags: hugopere55/frontend-microservices:latest
 
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   needs: [build-backend-docker, build-frontend-docker]
-  #   steps:
-  #     - name: Checkout code
-  #       uses: actions/checkout@v2
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build-backend-docker, build-frontend-docker]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-  #     - name: Set up SSH
-  #       uses: webfactory/ssh-agent@v0.5.3
-  #       with:
-  #         ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.5.3
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-  #     - name: Deploy to Coolify server
-  #       run: |
-  #         ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
-  #         docker pull hugopere55/backend-microservices:latest
-  #         docker pull hugopere55/frontend-microservices:latest
-  #         docker stop backend-microservices || true
-  #         docker rm backend-microservices || true
-  #         docker run -d --name backend-microservices -p 5000:5000 hugopere55/backend-microservices:latest
-  #         docker stop frontend-microservices || true
-  #         docker rm frontend-microservices || true
-  #         docker run -d --name frontend-microservices -p 3000:3000 hugopere55/frontend-microservices:latest
-  #         EOF
+      - name: Deploy to Coolify server
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+          coolify deploy backend-microservices --image hugopere55/backend-microservices:latest --port 5000:5000
+          coolify deploy frontend-microservices --image hugopere55/frontend-microservices:latest --port 3000:3000
+          EOF
