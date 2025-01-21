@@ -33,4 +33,4 @@ jobs:
           file: ./TP1/.dockerfile
           platforms: linux/amd64
           push: true
-          tags: bdallard/python-ci:latest
+          tags: hugopere55/bagasso:latest
