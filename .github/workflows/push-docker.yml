@@ -31,6 +31,6 @@ jobs:
         with:
           context: ./TP1
           file: ./TP1/.dockerfile
-          platforms: linux/arm/v7
+          platforms: linux/amd64
           push: true
           tags: bdallard/python-ci:latest
