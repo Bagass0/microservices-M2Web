@@ -14,7 +14,7 @@
     "build": "vite build",
     "serve": "vite preview",
     "electron": "electron .",
-    "test": "jest"
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.1",
