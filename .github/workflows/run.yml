@@ -31,4 +31,4 @@ jobs:
       - name: Test with pytest
         run: |
           pip install pytest pytest-cov
-          pytest TP1
+          pytest TP1/app/test_main.py
