@@ -72,6 +72,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           context: ./MonProjet/projet-devops
+          file: ./MonProjet/DEVOPS-API/.dockerfile
           push: true
           tags: hugopere55/frontend-microservices:latest
 
