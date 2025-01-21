@@ -15,4 +15,4 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build TP1 --file TP1/Dockerfile --tag python-test:$(date +%s)
+      run: docker build TP1 --file TP1/.dockerfile --tag python-test:$(date +%s)
