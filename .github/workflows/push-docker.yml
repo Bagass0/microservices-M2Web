@@ -30,7 +30,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./TP1
-          file: ./TP1/Dockerfile
+          file: ./TP1/.dockerfile
           platforms: linux/arm/v7
           push: true
           tags: bdallard/python-ci:latest
