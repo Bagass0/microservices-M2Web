@@ -58,7 +58,7 @@ Le workflow CI/CD pour ce projet est défini dans `.github/workflows/ci-cd.yml`.
    - Les images Docker pour le frontend et le backend sont construites et poussées vers Docker Hub.
    
 3. **Déploiement** :  
-   - Déploiement automatique des conteneurs sur un serveur à l'aide de Coolify.
+   - Déploiement automatique des conteneurs sur un serveur à l'aide de Cloudron .
 
 ### 🔍 Étapes détaillées
 
@@ -78,6 +78,35 @@ Le workflow CI/CD pour ce projet est défini dans `.github/workflows/ci-cd.yml`.
 - Les images sont déployées avec les ports :
   - Backend : `5000:5000`
   - Frontend : `3000:3000`
+
+---
+
+## 🔧 Tester le Workflow CI/CD localement avec `act`
+
+Pour tester localement le workflow CI/CD sans avoir besoin de pousser des changements sur GitHub, nous utilisons **act**.
+
+### Qu'est-ce que `act` ?
+
+`act` est un outil qui permet d'exécuter des workflows GitHub Actions sur votre machine locale. Il simule l'environnement GitHub Actions en utilisant Docker, ce qui est pratique pour tester les workflows avant de les pousser dans un dépôt.
+
+### Installation d'act
+
+1. Téléchargez et installez `act` depuis son [dépôt GitHub](https://github.com/Bagass0/microservices-M2Web).
+2. Ajoutez-le à votre PATH pour qu'il soit accessible globalement.
+
+### Commandes utiles
+
+- Exécuter tout le workflow :  
+  ```bash
+  act
+  ```
+
+- Exécuter un job spécifique (exemple : `test-frontend`) :  
+  ```bash
+  act -j test-frontend
+  ```
+
+![act](images/act.png)
 
 ---
 
@@ -107,20 +136,7 @@ MonProjet/
 
 ---
 
-## ⚙️ Installation
-
-1. Clonez le projet :
-   ```bash
-   git clone https://github.com/votre-repo/MonProjet.git
-   cd MonProjet
-   ```
-
-2. Lancez les conteneurs :
-   ```bash
-   docker-compose up -d
-   ```
-
-3. Accédez aux services :
+   Accédez aux services :
    - Frontend : [http://localhost:3000](http://localhost:3000)
    - phpMyAdmin : [http://localhost:8080](http://localhost:8080)
    - Portainer : [http://localhost:9000](http://localhost:9000)
