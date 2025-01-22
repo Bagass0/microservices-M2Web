@@ -2,7 +2,7 @@
 
 ## 📝 Description
 
-MonProjet est une interface permettant de chercher des données d'écoles en France, couvrant la période de 2020 à 2024. Le projet utilise **React** pour le frontend et **PHP natif** pour le backend, avec une base de données **MySQL**. Ce projet est conteneurisé grâce à **Docker**, avec deux Dockerfiles et un fichier **docker-compose.yml** pour orchestrer les conteneurs.
+Ce projet est une interface permettant de chercher des données d'écoles en France, couvrant la période de 2020 à 2024. Le projet utilise **React** pour le frontend et **PHP natif** pour le backend, avec une base de données **MySQL**. Ce projet est conteneurisé grâce à **Docker**, avec deux Dockerfiles et un fichier **docker-compose.yml** pour orchestrer les conteneurs.
 
 ## 🌟 Fonctionnalités principales
 

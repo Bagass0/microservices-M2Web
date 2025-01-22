@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1737539874262" clover="3.2.0">
-  <project timestamp="1737539874263" name="All files">
+<coverage generated="1737553175211" clover="3.2.0">
+  <project timestamp="1737553175213" name="All files">
     <metrics statements="74" coveredstatements="28" conditionals="35" coveredconditionals="6" methods="12" coveredmethods="4" elements="121" coveredelements="38" complexity="0" loc="74" ncloc="74" packages="1" files="2" classes="2"/>
     <file name="App.jsx" path="C:\Users\HugoB\Documents\Projet_technique\microservices-M2Web\MonProjet\projet-devops\src\App.jsx">
       <metrics statements="73" coveredstatements="28" conditionals="35" coveredconditionals="6" methods="12" coveredmethods="4"/>
